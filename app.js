@@ -2,6 +2,8 @@ const express = require('express');
 require('dotenv').config();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const helmet = require('helmet');
+
 
 const usersRouter = require('./routes/users');
 const cardsRouter = require('./routes/cards');
@@ -19,6 +21,7 @@ mongoose.connect('mongodb://localhost:27017/mestodb', {
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(helmet());
 
 // роуты регистрации и логина
 app.post('/signin', login);
@@ -40,7 +43,9 @@ const catchErrorMIddleware = ((err, req, res, next) => {
     console.error(err);
     return res.status(err.status).send({ status: err.status, message: err.message });
   }
-
+  // if (err.status(500)) {
+  //     return res.status(500).send({ message: err.message });
+  // }
   return next();
 });
 

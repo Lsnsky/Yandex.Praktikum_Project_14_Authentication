@@ -18,16 +18,23 @@ module.exports.getUserById = (req, res) => {
 
 module.exports.createUser = (req, res) => {
   const {
-    name, about, avatar, email,
+    name,
+    about,
+    avatar,
+    email,
   } = req.body;
   console.log(req.body);
   bcrypt.hash(req.body.password, 10)
     .then((hash) => User.create({
-      name, about, avatar, email, password: hash,
+      name,
+      about,
+      avatar,
+      email,
+      password: hash,
     }))
 
     .then((user) => res.send({ data: user }))
-    .catch((err) => res.status(400).send({ message: 'Произошла ошибка', err }));
+    .catch((err) => res.status(400).send({ message: err.message }));
 };
 
 // обновление профиля пользователя

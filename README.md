@@ -2,7 +2,7 @@
 
 # Яндекс.Практикум
   
-## Проектная работа 14_v1.0.0
+## Проектная работа 14_v1.0.1
  
 ## Authentication
 
@@ -13,7 +13,7 @@
 
 В работе применяются базы данных MongoDB для разработки бэкенда проекта Mesto и разработки API, согласно принципам REST.
 
-Актуальная версия проекта (v1.0.0) доступна по этой [ссылке](https://github.com/Lsnsky/Yandex.Praktikum_Project_14_Authentication)
+Актуальная версия проекта (v1.0.1) доступна по этой [ссылке](https://github.com/Lsnsky/Yandex.Praktikum_Project_14_Authentication)
 
 
 
@@ -30,7 +30,7 @@ MongoDB Compass Community
 <li>
 NPM-пакеты:
 
-eslint, eslint-config-airbnb-base, eslint-plugin-import, express, mongoose, body-parser, validator, bcryptjs, jsonwebtoken, dotenv 
+eslint, eslint-config-airbnb-base, eslint-plugin-import, express, mongoose, body-parser, validator, bcryptjs, jsonwebtoken, dotenv, helmet
   
 
 ### Инструкция по сборке:
